@@ -15,11 +15,11 @@
             background-color: #FFEAD5;
         }
         .carousel {
-            max-width: 1000px;
+            max-width: 2000px;
             margin: 0 auto;
         }
         .navbar-logo {
-            height: 60px; /* Aumente esta altura conforme necessário */
+            height: 60px;
             max-height: 60px;
         }
 
