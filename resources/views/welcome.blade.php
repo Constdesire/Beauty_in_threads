@@ -22,9 +22,7 @@
             height: 60px;
             max-height: 60px;
         }
-
-	
-	section {
+        section {
   width: 100%;
   /*   skew adds a 4.76 degree slope and the translateY equation is based on the fact that a 4.76 degree slope has a gradient of 1:12 */
   -webkit-transform: skew(0, -4.76deg) translateY(calc(50vw/-12));
@@ -48,7 +46,7 @@ section:last-child {
           transform: skew(0);
   margin-top: calc(100vw/-12);
   padding-top: calc(100vw/12);
-  min-height: 100vh;
+  min-height: 50vh;
   z-index: -1;
 }
 
@@ -70,29 +68,18 @@ section:nth-child(4) {
   background-color: #FFEAD5;
 }
 
+        h1 {
+            font-family:Geometr231 Lt BT;
+            color: #FFF;
+            width: 50%;
+        }
+        p {
+            font-family: sans-serif;
+            color: #FFF;
+            width: 50%;
+           
 
-section{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-h1 {
-    font-family: sans-serif;
-    color: #FFEAD5;
-    text-align: center; /* Adiciona o alinhamento ao centro */
-}
-
-p {
-    font-family: sans-serif;
-    color: #fff;
-    text-align: center; /* Adiciona o alinhamento ao centro */
-}
+        }
     </style>
 </head>
 <body>
@@ -101,7 +88,7 @@ p {
             <img class="h-12 navbar-logo" alt="logo" src="img/Logo.png">
         </a>
         <div class="lg:hidden">
-            <button class="navbar-burger flex items-center text-pink-600 p-3">
+            <button class="navbar-burger flex items-center text--600 p-3">
                 <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <title>Mobile menu</title>
                     <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -121,21 +108,9 @@ p {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
                 </svg>
             </li>
-            <li><a class="text-sm text-black-400 hover:text-gray-500" href="#">Services</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                </svg>
-            </li>
-            <li><a class="text-sm text-black-400 hover:text-gray-500" href="#">Pricing</a></li>
-            <li class="text-gray-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                </svg>
-            </li>
-            <li><a class="text-sm text-black-400 hover:text-gray-500" href="#">Contact</a></li>
+            <li><a class="text-sm text-black-400 hover:text-gray-500" href="#">Horários Marcados</a></li>
+          
         </ul>
-		<a class="hidden lg:inline-block py-2 px-6 text-sm font-bold rounded-xl transition duration-200" style="color: #A36A4F;" href="#">Login</a>
     </nav>
     <div class="navbar-menu relative z-50 hidden">
         <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
@@ -159,19 +134,13 @@ p {
 					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Agendamento</a>
                     </li>
                     <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Services</a>
+					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Horários Marcados</a>
                     </li>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Pricing</a>
-                    </li>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Contact</a>
-                    </li>
+                    
                 </ul>
             </div>
             <div class="mt-auto">
                 <div class="pt-6">
-				<a class="block px-4 py-3 mb-2 leading-loose text-xs text-center font-semibold rounded-xl" style="color: #A36A4F; hover: color: #FFEAD5;" href="#">Login</a>
                 </div>
                 <p class="my-4 text-xs text-center text-gray-400">
                     <span>Copyright © 2024</span>
@@ -190,7 +159,7 @@ p {
                     <img src="img/slide1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/slide2.png" class="d-block w-100" alt="...">
+                    <img src="img/slide2.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -204,34 +173,36 @@ p {
         </div>
     </div>
 	<br><br><br>
-
+    <br><br><br>
 <div class="section-container">
   
-  <section>
-    <h1>Nossos Serviços<br>
-	Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de beleza:
+<section style="min-height: 50vh;">
+    <h1 class="text-center">Nossos Serviços<br></h1>
+    <br>
+    <p class="my-4 text-center">
+    Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de beleza:
 
-Cabelos: Corte, coloração, mechas, tratamentos capilares, escova, penteados para ocasiões especiais e muito mais.
-Unhas: Manicure, pedicure, alongamento de unhas, nail art e tratamentos para unhas saudáveis.
-Estética Facial: Limpeza de pele, hidratação, tratamentos anti-idade, design de sobrancelhas e maquiagem.
-Estética Corporal: Massagens, drenagem linfática, depilação e tratamentos corporais para redução de medidas e celulite.
-	</h1>
-	
-  </section>
-  <section>
+    Cabelos: Corte, coloração, mechas, tratamentos capilares, escova, penteados para ocasiões especiais e muito mais.
+    Unhas: Manicure, pedicure, alongamento de unhas, nail art e tratamentos para unhas saudáveis.
+    Estética Facial: Limpeza de pele, hidratação, tratamentos anti-idade, design de sobrancelhas e maquiagem.
+    Estética Corporal: Massagens, drenagem linfática, depilação e tratamentos corporais para redução de medidas e celulite.
+    </p>
+</section>
+<section style="min-height: 50vh;">
     <h1>Sobre Nós</h1>
-	<p>Nós somos uma empresa dedicada a oferecer as melhores soluções em beleza e moda. Nossa missão é proporcionar a todos os nossos clientes uma experiência única e personalizada, sempre buscando inovar e trazer as últimas tendências do mercado.</p>
+    <p class="my-4 text-xs text-center">Nós somos uma empresa dedicada a oferecer as melhores soluções em beleza e moda.
+    Nossa missão é proporcionar a todos os nossos clientes uma experiência única e personalizada, sempre buscando inovar e trazer as últimas tendências do mercado.</p>
+</section>
+<section style="min-height: 50vh;">
+    <h1 >Localização e Contato</h1>
+    <p class="my-4 text-xs text-center">
+    Estamos localizados no coração da cidade, com fácil acesso e estacionamento disponível. Venha nos visitar e descubra como podemos transformar o seu visual e renovar sua autoestima.
 
-  </section>
-  <section>
-    <h1>Localização e Contato
-Estamos localizados no coração da cidade, com fácil acesso e estacionamento disponível. Venha nos visitar e descubra como podemos transformar o seu visual e renovar sua autoestima.
-
-Endereço: [Endereço do Salão]
-Telefone: [Número de Telefone]
-E-mail: [Endereço de E-mail]
-Horário de Funcionamento: [Horário de Funcionamento]</h1>
-  </section>
+    Endereço: [Endereço do Salão]
+    Telefone: [Número de Telefone]
+    E-mail: [Endereço de E-mail]
+    Horário de Funcionamento: [Horário de Funcionamento]</p>
+</section>
   
 </div>
 
