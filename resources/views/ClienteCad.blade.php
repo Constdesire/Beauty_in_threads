@@ -11,30 +11,41 @@
         body {
             background-color: #A36A4F;
         }
-        .header-site{
-    background-image: url(img/cad.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    color: #2f302f;
-    padding: 12% 10%;
-}
+        .header-site {
+            background-image: url('img/cad.png');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #2f302f;
+            padding: 12% 10%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 768px) {
+            .header-site {
+                padding: 20% 5%;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-site {
+                padding: 25% 3%;
+            }
+        }
     </style>
 </head>
 <body>
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
-        <a class="mr-auto text-3xl font-bold leading-none" href="#">
-            <img class="h-12 navbar-logo" alt="logo" src="img/Logo.png">
-        </a>
-        <div class="lg:hidden">
-            <button class="navbar-burger flex items-center text-pink-600 p-3">
-                <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <title>Mobile menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </button>
-        </div>
+    <a class="mr-auto text-3xl font-bold leading-none" href="#">
+        <img class="h-12 navbar-logo" alt="logo" src="img/Logo.png">
+    </a>
+    <div class="lg:hidden">
+        <button id="navbar-burger" class="flex items-center text-pink-600 p-3">
+            <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Mobile menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </button>
+    </div>
         <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
 		<li><a class="text-sm text-black-600 hover:text-gray-500" href="welcome.blade.php">Home</a></li>
             <li class="text-gray-300">
@@ -62,133 +73,98 @@
             </li>
             <li><a class="text-sm text-black-400 hover:text-gray-500" href="">Horários Marcados</a></li>
         </ul>
+         <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200" href="login.blade.php">Login</a>
     </nav>
-    <div class="navbar-menu relative z-50 hidden">
-        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-        <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
-            <div class="flex items-center mb-8">
-                <a class="mr-auto text-3xl font-bold leading-none" href="#">
-                    <img class="h-12 lg:hidden" alt="logo" src="img/Logo.png">
-                </a>
-                <button class="navbar-close">
-                    <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <div>
-                <ul>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php">Home</a>
-                    </li>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php">Nossos Serviços</a>
-                    </li>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php">Sobre nós</a>
-                    </li>
-                    <li class="mb-1">
-					<a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php">Contato</a>
-                    </li>
-                </ul>
-            </div>
-                <p class="my-4 text-xs text-center text-gray-400">
-                    <span>Copyright © 2024</span>
-                </p>
-            </div>
-        </nav>
+<!--------->
+<div id="navbar-menu" class="navbar-menu hidden relative z-50">
+    <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+    <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+        <div class="flex items-center mb-8">
+            <a class="mr-auto text-3xl font-bold leading-none" href="#">
+                <img class="h-12 lg:hidden" alt="logo" src="img/Logo.png">
+            </a>
+            <button id="navbar-close" class="navbar-close">
+                <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div>
+            <ul>
+                <li class="mb-1"><a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php">Home</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php/#Serviços">Nossos Serviços</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php/#Sobre">Sobre nós</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="welcome.blade.php/#Contato">Contato</a></li>
+                <li class="mb-1"><a class="block p-4 text-sm font-semibold text-black-600 hover:text-gray-500" href="#">Horários Marcados</a></li>
+            </ul>
+        </div>
+        <p class="my-4 text-xs text-center text-gray-400">
+            <span>Copyright © 2024</span>
+        </p>
+    </nav>
+</div>
+
+<!--<section class="header-site"></section>-->
+
+<div class="flex items-center justify-center p-12">
+    <div class="max-w-6xl w-full bg-white shadow-md rounded-lg flex">
+        <!-- Image Section -->
+        <div class="w-1/2 hidden lg:block">
+            <img src="img/salaoB.jpg" alt="Side Image" class="w-full h-full object-cover rounded-l-lg">
+        </div>
+        <!-- Form Section -->
+        <div class="w-full lg:w-1/2 p-6">
+            <h1 class="text-3xl font-semibold mb-6 text-black text-center">Cadastre-se!!!</h1>
+            <p class="my-4 text-center">Faça seu cadastro para se tornar um cliente do Beleza em fios!</p>
+            <form method="POST" action="/adicionarCliente">
+                <div class="mb-5">
+                    <label for="nome" class="mb-3 block text-base font-medium text-[#07074D]">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Nome completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="dataNasc" class="mb-3 block text-base font-medium text-[#07074D]">Data de Nascimento</label>
+                    <input type="text" name="dataNasc" id="dataNasc" placeholder="0000/00/00" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="cpf" class="mb-3 block text-base font-medium text-[#07074D]">CPF</label>
+                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="telefone" class="mb-3 block text-base font-medium text-[#07074D]">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="endereco" class="mb-3 block text-base font-medium text-[#07074D]">Endereço</label>
+                    <input type="text" name="endereco" id="endereco" placeholder="Rua, número, bairro" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="cep" class="mb-3 block text-base font-medium text-[#07074D]">CEP</label>
+                    <input type="text" name="cep" id="cep" placeholder="00000-000" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">Email</label>
+                    <input type="email" name="email" id="email" placeholder="seu-email@dominio.com" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div class="mb-5">
+                    <label for="senha" class="mb-3 block text-base font-medium text-[#07074D]">Senha</label>
+                    <input type="password" name="senha" id="senha" placeholder="********" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                </div>
+                <div>
+                    <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <br>
-     <!--------------------->
-     <section class="header-site">
-    
-    </section>
-    <!----------form---------------->
-    <br><br>
-    <h1 class="text-3xl font-semibold mb-6 text-black text-center">Cadastre-se!!!</h1>
-      <p class="my-4 text-center">Faça seu cadastro para se tornar um cliente do Beleza em fios!</p>
-    <div class="flex items-center justify-center p-12">
-    <!-- Author: FormBold Team -->
-        <form>
-            <div class="mb-5">
-                <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Full Name
-                </label>
-                <input type="text" name="name" id="name" placeholder="Full Name"
-                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-            </div>
-            <div class="mb-5">
-                <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Phone Number
-                </label>
-                <input type="text" name="phone" id="phone" placeholder="Enter your phone number"
-                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-            </div>
-            <div class="mb-5">
-                <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Email Address
-                </label>
-                <input type="email" name="email" id="email" placeholder="Enter your email"
-                    class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-            </div>
-            <div class="-mx-3 flex flex-wrap">
-                <div class="w-full px-3 sm:w-1/2">
-                    <div class="mb-5">
-                        <label for="date" class="mb-3 block text-base font-medium text-[#07074D]">
-                            Date
-                        </label>
-                        <input type="date" name="date" id="date"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
-                </div>
-                <div class="w-full px-3 sm:w-1/2">
-                    <div class="mb-5">
-                        <label for="time" class="mb-3 block text-base font-medium text-[#07074D]">
-                            Time
-                        </label>
-                        <input type="time" name="time" id="time"
-                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                    </div>
-                </div>
-            </div>
+</div>
 
-            <div class="mb-5 pt-3">
-                <label class="mb-5 block text-base font-semibold text-[#07074D] sm:text-xl">
-                    Address Details
-                </label>
-                <div class="-mx-3 flex flex-wrap">
-                    <div class="w-full px-3 sm:w-1/2">
-                        <div class="mb-5">
-                            <input type="text" name="area" id="area" placeholder="Enter area"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                    </div>
-                    <div class="w-full px-3 sm:w-1/2">
-                        <div class="mb-5">
-                            <input type="text" name="city" id="city" placeholder="Enter city"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                    </div>
-                    <div class="w-full px-3 sm:w-1/2">
-                        <div class="mb-5">
-                            <input type="text" name="state" id="state" placeholder="Enter state"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                    </div>
-                    <div class="w-full px-3 sm:w-1/2">
-                        <div class="mb-5">
-                            <input type="text" name="post-code" id="post-code" placeholder="Post Code"
-                                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+<script>
+    document.getElementById('navbar-burger').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('hidden');
+    });
 
-            <div>
-            <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button>
-            </div>
-        </form>
-    </div>
-
+    document.getElementById('navbar-close').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
