@@ -116,43 +116,43 @@
         <div class="w-full lg:w-1/2 p-6">
             <h1 class="text-3xl font-semibold mb-6 text-black text-center">Cadastre-se!!!</h1>
             <p class="my-4 text-center">Faça seu cadastro para se tornar um cliente do Beleza em fios!</p>
-            <form method="POST" action="/adicionarCliente">
-                <div class="mb-5">
-                    <label for="nome" class="mb-3 block text-base font-medium text-[#07074D]">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome completo" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="dataNasc" class="mb-3 block text-base font-medium text-[#07074D]">Data de Nascimento</label>
-                    <input type="text" name="dataNasc" id="dataNasc" placeholder="0000/00/00" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="cpf" class="mb-3 block text-base font-medium text-[#07074D]">CPF</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="telefone" class="mb-3 block text-base font-medium text-[#07074D]">Telefone</label>
-                    <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="endereco" class="mb-3 block text-base font-medium text-[#07074D]">Endereço</label>
-                    <input type="text" name="endereco" id="endereco" placeholder="Rua, número, bairro" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="cep" class="mb-3 block text-base font-medium text-[#07074D]">CEP</label>
-                    <input type="text" name="cep" id="cep" placeholder="00000-000" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">Email</label>
-                    <input type="email" name="email" id="email" placeholder="seu-email@dominio.com" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div class="mb-5">
-                    <label for="senha" class="mb-3 block text-base font-medium text-[#07074D]">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="********" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
-                </div>
-                <div>
-                    <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button>
-                </div>
-            </form>
+            <form method="POST" action="/adicionaCliente">
+            @csrf
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">Nome</label>
+                    <input type="text" class="form-control" name="Nome" >
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2" >Data de Nascimento</label>
+                    <input type="text" class="form-control" name="DataNasc" placeholder="" >
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">CPF</label>
+                    <input type="text" class="form-control" name="CPF" placeholder="">
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">Telefone</label>
+                    <input type="text" class="form-control" name="Telefone" >
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">Endereço</label>
+                    <input type="text" class="form-control" name="Endereco" placeholder="">
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">CEP</label>
+                    <input type="text" class="form-control" name="CEP" placeholder="">
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">Email</label>
+                    <input type="text" class="form-control" name="Email" placeholder="">
+           </div>
+           <div class="form-group mb-2">
+                <label for="formGroupExampleInput2">Senha</label>
+                    <input type="text" class="form-control" name="Senha" placeholder="">
+           </div>
+          
+           <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button> 
+      </form>
         </div>
     </div>
 </div>
