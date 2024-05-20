@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/05/2024 às 19:38
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Tempo de geração: 20/05/2024 às 04:49
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `salaoc`
 --
-CREATE DATABASE `salaoc`;
-USE `salaoc`;
+
 -- --------------------------------------------------------
 
 --
@@ -44,7 +43,8 @@ CREATE TABLE `agendamentos` (
 --
 
 INSERT INTO `agendamentos` (`id`, `Servico`, `DataServico`, `Horario`, `IdCliente`, `IdFunc`, `created_at`, `updated_at`) VALUES
-(1, 'Corte', '2004-11-11', '12:00', 1, 1, '2024-05-08 20:37:03', '2024-05-08 20:37:03');
+(1, 'Corte', '2004-11-11', '12:00', 1, 1, '2024-05-08 20:37:03', '2024-05-08 20:37:03'),
+(3, 'cABELO', '2024-11-11', '10:00', 1, 1, '2024-05-20 04:53:47', '2024-05-20 04:53:47');
 
 -- --------------------------------------------------------
 
@@ -61,6 +61,7 @@ CREATE TABLE `clientes` (
   `Endereco` varchar(255) NOT NULL,
   `CEP` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
+  `Senha` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -69,8 +70,9 @@ CREATE TABLE `clientes` (
 -- Despejando dados para a tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id`, `Nome`, `DataNasc`, `CPF`, `Telefone`, `Endereco`, `CEP`, `Email`, `created_at`, `updated_at`) VALUES
-(1, 'Desiree', '11/12/2000', '3244434242', '4324234224', 'FDGFDGDGD', '34242424244', 'GFDDGDGD', '2024-05-08 20:07:00', '2024-05-08 20:07:00');
+INSERT INTO `clientes` (`id`, `Nome`, `DataNasc`, `CPF`, `Telefone`, `Endereco`, `CEP`, `Email`, `Senha`, `created_at`, `updated_at`) VALUES
+(1, 'DEE', '2008/11/11', '121.121.121-12', '73737723', 'Rua dudsdjs', '21222-2222', 'alexaygsdy', 'ferfrefre', NULL, NULL),
+(2, 'Alexa', '2003/01/23', '123.456.789-09', '(11) 37388388', 'Rua aaaaaa', '1122-2222', 'alexa@gmail.com', 'qwdasad', '2024-05-20 05:06:01', '2024-05-20 05:06:01');
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2024_04_24_164804_create_clientes_table', 1),
 (6, '2024_04_24_165721_create_funcionarios_table', 2),
 (7, '2024_04_24_165842_create_agendamentos_table', 3),
-(8, '2024_05_08_171706_create_logins_table', 4);
+(8, '2024_05_08_171706_create_logins_table', 4),
+(9, '2024_05_20_013329_create_clientes_table', 5);
 
 -- --------------------------------------------------------
 
@@ -275,13 +278,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `agendamentos`
 --
 ALTER TABLE `agendamentos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -305,7 +308,7 @@ ALTER TABLE `logins`
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
