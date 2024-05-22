@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome');});
 Route::get('/login.blade.php', function () { return view('login');});
+Route::get('/Adm.blade.php', function () { return view('adm');});
+
 
 Route::get("/ClienteCad", [ClienteController::class, "ClienteCad"]);
 Route::post("/adicionaCliente", [ClienteController::class, "adicionarC"]);
