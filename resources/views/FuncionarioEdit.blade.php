@@ -36,7 +36,7 @@
 <body>
 <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
     <a class="mr-auto text-3xl font-bold leading-none" href="#">
-        <img class="h-12 navbar-logo" alt="logo" src="img/Logo.png">
+        <img class="h-12 navbar-logo" alt="logo" src="/img/Logo.png">
     </a>
     <div class="lg:hidden">
         <button id="navbar-burger" class="flex items-center text-pink-600 p-3">
@@ -103,103 +103,64 @@
         </p>
     </nav>
 </div>
-
 <!--<section class="header-site"></section>-->
 
 <div class="flex items-center justify-center p-12">
-    <div class="max-w-6xl w-full bg-white shadow-md rounded-lg flex">
-        <!-- Image Section -->
-        <div class="w-1/2 hidden lg:block">
-            <img src="img/salaoB.jpg" alt="Side Image" class="w-full h-full object-cover rounded-l-lg">
-        </div>
+    <div class="max-w-3xl w-full bg-white shadow-md rounded-lg flex">
         <!-- Form Section -->
-        <div class="w-full lg:w-1/2 p-6">
-            <h1 class="text-3xl font-semibold mb-6 text-black text-center">Cadastre-se!!!</h1>
-            <p class="my-4 text-center">Faça seu cadastro para se tornar um funcionario do Beleza em fios!</p>
-            <form method="POST" action="/adicionarFunc">
-                @csrf
-                <div class="mb-3">
-                    <label for="NomeFunc" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="NomeFunc" name="NomeFunc">
-                </div>
-                <div class="mb-3">
-                    <label for="DataNascFunc" class="form-label">Data de Nascimento</label>
-                    <input type="text" class="form-control" id="DataNascFunc" name="DataNascFunc" placeholder="XXXX/XX/XX">
-                </div>
-                <div class="mb-3">
-                    <label for="CPFfunc" class="form-label">CPF</label>
-                    <input type="text" class="form-control" id="CPFfunc" name="CPFfunc" placeholder="XXXX/XX/XX">
-                </div>
-                <div class="mb-3">
-                    <label for="TelefoneFunc" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" id="TelefoneFunc" name="TelefoneFunc" placeholder="(XX)XXXXX-XXXX">
-                </div>
-                <div class="mb-3">
-                    <label for="EnderecoFunc" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="EnderecoFunc" name="EnderecoFunc">
-                </div>
-                <div class="mb-3">
-                    <label for="RGFunc" class="form-label">RG</label>
-                    <input type="text" class="form-control" id="RGFunc" name="RGFunc">
-                </div>
-                <div class="mb-3">
-                    <label for="CEPFunc" class="form-label">CEP</label>
-                    <input type="text" class="form-control" id="CEPFunc" name="CEPFunc" placeholder="XXXX/XX/XX">
-                </div>
-                <div class="mb-3">
-                    <label for="EmailFunc" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="EmailFunc" name="EmailFunc">
-                </div>
-                
-           <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button> 
-      </form>
+        <div class="w-full lg:w-2/2 p-6">
+    <h1 class="text-3xl font-semibold mb-6 text-black text-center">Editar Funcionario</h1>
+    <p class="my-4 text-center">Atualize as informações do cliente do Beleza em fios!</p>
+    <form method="POST" action="/atualizarFunc/{{$funcionario ->id}}">
+        @csrf
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">Nome</label>
+            <input type="text" class="form-control" name="Nome" value="{{ $funcionario->NomeFunc }}">
         </div>
-    </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">Data de Nascimento</label>
+            <input type="text" class="form-control" name="DataNasc" value="{{ $funcionario->DataNascFunc }}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">CPF</label>
+            <input type="text" class="form-control" name="CPF" value="{{ $funcionario->CPFfunc }}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">Telefone</label>
+            <input type="text" class="form-control" name="Telefone" value="{{ $funcionario->TelefoneFunc }}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">Endereço</label>
+            <input type="text" class="form-control" name="Endereco" value="{{ $funcionario->EnderecoFunc }}">
+        </div>  
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">RG</label>
+            <input type="text" class="form-control" name="RG" value="{{ $funcionario->RGFunc }}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">CEP</label>
+            <input type="text" class="form-control" name="CEP" value="{{ $funcionario->CEPFunc }}">
+        </div>
+        <div class="form-group mb-2">
+            <label for="formGroupExampleInput2">Email</label>
+            <input type="email" class="form-control" name="Email" value="{{ $funcionario->EmailFunc }}">
+        </div>
+
+<<button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300" >Atualizar</button>
+    </form>
 </div>
 
-<div class="flex justify-center">
-    <div class="overflow-x-auto w-full lg:w-5/6">
-        <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-black">
-                <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Id</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Nome</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Data de Nascimento</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">CPF</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Endereco</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Telefone</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">RG</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">CEP</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Email</th>
-                    <th scope="col" class="px-6 py-3"></th>
-                </tr>
-            </thead>
-            
-            <tbody class="bg-white divide-y divide-gray-200">
-                @if (count($funcionario) > 0)
-                    @foreach ($funcionario as $cont)
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->id }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->NomeFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->DataNascFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->CPFfunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->TelefoneFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->EnderecoFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->RGFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->CEPFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->EmailFunc }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap">
-                                <a href="/editarFunc/{{ $cont->id }}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
-                                <a href="/excluirFunc/{{ $cont->id }}" class="ml-4 text-red-600 hover:text-red-900">Excluir</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                @else
-                    <tr>
-                    <td colspan="10" class="px-6 py-8 text-center text-gray-500">Sem registros!</td>
-                    </tr>
-                @endif
-            </tbody>
-        </table>
-    </div>
-</div>
+
+<br><br><br><br>
+
+<script>
+    document.getElementById('navbar-burger').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('hidden');
+    });
+
+    document.getElementById('navbar-close').addEventListener('click', function () {
+        document.getElementById('navbar-menu').classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
