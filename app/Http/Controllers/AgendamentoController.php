@@ -8,30 +8,30 @@ use Illuminate\Http\Request;
 class AgendamentoController extends Controller
 {
     public function AgendamentoCad(Request $req){
-        $agendamento = Agendamento::all();
-        return view('AgendamentoCad')->with("agendamento", $agendamento);
+        $agendamentos = Agendamento::all();
+        return view('AgendamentoCad')->with("agendamentos", $agendamentos);
     }
-
-    public function adicionarA(Request $req){
-        $agendamento = new Agendamento;
-        $agendamento->Servico = $req->Servico;
-        $agendamento->DataServico = $req->DataServico;
-        $agendamento->Horario = $req->Horario;
-        $agendamento->IdCliente = $req->IdCliente;
-        $agendamento->IdFunc = $req->IdFunc;
     
-        $agendamento->save();
+    public function adicionarA(Request $req){
+        $agendamentos = new Agendamento;
+        $agendamentos->Servico = $req->Servico;
+        $agendamentos->DataServico = $req->DataServico;
+        $agendamentos->Horario = $req->Horario;
+        $agendamentos->IdCliente = $req->IdCliente;
+        $agendamentos->IdFunc = $req->IdFunc;
+    
+        $agendamentos->save();
         return redirect()->back();
     }
 
     public function editarA(Request $req){
-        $agendamento = Agendamento::find($req->id);
-        return view('editar')->with("agendamento", $agendamento);
+        $agendamentos = Agendamento::find($req->id);
+        return view('editar')->with("agendamentos", $agendamentos);
     }
 
     public function atualizarA(Request $req){
-        $agendamento = Agendamento::find($req->id);
-        $agendamento->update(
+        $agendamentos = Agendamento::find($req->id);
+        $agendamentos->update(
             [
                "Servico" => $req->Servico,
                "DataServico" => $req->DataServico,
@@ -44,8 +44,8 @@ class AgendamentoController extends Controller
     }
 
     public function excluirA(Request $req){
-        $agendamento = Agendamento::find($req->id);
-        $agendamento->delete();
+        $agendamentos = Agendamento::find($req->id);
+        $agendamentos->delete();
         return redirect()->back();
     }
 }
