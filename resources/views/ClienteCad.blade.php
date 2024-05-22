@@ -124,7 +124,7 @@
            </div>
            <div class="form-group mb-2">
                 <label for="formGroupExampleInput2" >Data de Nascimento</label>
-                    <input type="text" class="form-control" name="DataNasc" placeholder="" >
+                    <input type="date" class="form-control" name="DataNasc" placeholder="" >
            </div>
            <div class="form-group mb-2">
                 <label for="formGroupExampleInput2">CPF</label>
@@ -146,16 +146,57 @@
                 <label for="formGroupExampleInput2">Email</label>
                     <input type="text" class="form-control" name="Email" placeholder="">
            </div>
-           <div class="form-group mb-2">
-                <label for="formGroupExampleInput2">Senha</label>
-                    <input type="text" class="form-control" name="Senha" placeholder="">
-           </div>
           
            <button type="submit" class="w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Cadastrar</button> 
       </form>
         </div>
     </div>
 </div>
+
+<div class="flex justify-center">
+    <div class="overflow-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-black">
+                <tr>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Id</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Nome</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Data de Nascimento</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">CPF</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Endereco</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Telefone</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">CEP</th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Email</th>
+                    <th scope="col" class="px-6 py-3"></th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                @if (count($cliente) > 0)
+                    @foreach ($cliente as $cont)
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->id }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->Nome }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->DataNasc }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->CPF }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->Telefone }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->Endereco }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->CEP }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ $cont->Email }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <a href="/editarCL/{{ $cont->id }}" class="text-indigo-600 hover:text-indigo-900">Editar</a>
+                                <a href="/excluirCL/{{ $cont->id }}" class="ml-4 text-red-600 hover:text-red-900">Excluir</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr>
+                        <td colspan="9" class="px-6 py-4 text-center">Sem registros!</td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
+<br><br><br><br>
 
 <script>
     document.getElementById('navbar-burger').addEventListener('click', function () {

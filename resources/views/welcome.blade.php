@@ -184,7 +184,7 @@ h1 {
         <section class="min-h-screen flex flex-col lg:flex-row justify-center items-center text-center px-4">
             <div class="w-full lg:w-1/2">
                 <br>
-                <h1 class="text-4xl lg:text-5xl xl:text-6xl">Nossos Serviços</h1>
+                <div id="Serviços"><h1 class="text-4xl lg:text-5xl xl:text-6xl">Nossos Serviços</h1></div>
                 <br>
                 <p class="text-lg lg:text-xl xl:text-2xl my-4">
                     Oferecemos uma ampla gama de serviços para atender todas as suas necessidades de beleza:
@@ -208,7 +208,7 @@ h1 {
                 <img src="img/sobre.png" class="w-full h-full object-cover" alt="Sobre Nós">
             </div>
             <div class="w-full lg:w-1/2">
-                <h1 class="text-4xl lg:text-5xl xl:text-6xl">Sobre Nós</h1>
+                <div id="Sobre"><h1 class="text-4xl lg:text-5xl xl:text-6xl">Sobre Nós</h1></div>
                 <p class="text-lg lg:text-xl xl:text-2xl my-4">
                     Nós somos uma empresa dedicada a oferecer as melhores soluções em beleza e moda.
                     Nossa missão é proporcionar a todos os nossos clientes uma experiência única e personalizada, sempre buscando inovar e trazer as últimas tendências do mercado.
@@ -219,7 +219,7 @@ h1 {
 
         <section class="min-h-screen flex flex-col lg:flex-row justify-center items-center text-center px-4">
             <div class="w-full lg:w-1/2"><br>
-                <h1 class="text-4xl lg:text-5xl xl:text-6xl">Localização e Contato</h1>
+                <div id="Contato"><h1 class="text-4xl lg:text-5xl xl:text-6xl">Localização e Contato</h1></div>
                 <p class="text-lg lg:text-xl xl:text-2xl my-4">
                     Estamos localizados no coração da cidade, com fácil acesso e estacionamento disponível. Venha nos visitar e descubra como podemos transformar o seu visual e renovar sua autoestima.
                     <br>
