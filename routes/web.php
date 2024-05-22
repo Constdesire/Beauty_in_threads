@@ -35,8 +35,8 @@ Route::get("/editarFunc/{id}", [FuncionarioController::class, "editarFunc"]);
 Route::post("/atualizarFunc/{id}", [FuncionarioController::class, "atualizarFunc"]);
 Route::get("/excluirFunc/{id}", [FuncionarioController::class, "excluirFunc"]);
 
-Route::get("/AC", [AgendamentoController::class, "AgendamentoCad"]);
-Route::post("/adicionarCA", [AgendamentoController::class, "adicionarA"]);
-Route::get("/editarA/{id}", [AgendamentoController::class, "editarA"]);
-Route::post("/atualizarAL/{id}", [AgendamentoController::class, "atualizarA"]);
-Route::get("/excluirA/{id}", [AgendamentoController::class, "excluirA"]);
+Route::post('/adicionarA', [AgendamentoController::class, 'adicionarA']);
+Route::get('/editarA/{id}', [AgendamentoController::class, 'editarA']);
+Route::post('/atualizarA/{id}', [AgendamentoController::class, 'atualizarA']);
+Route::get('/excluirA/{id}', [AgendamentoController::class, 'excluirA']);
+
